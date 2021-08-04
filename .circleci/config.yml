@@ -31,31 +31,12 @@ jobs:
       - checkout:
           path: ~/idea-mixer
       - ruby/install-deps
-      # Download and cache dependencies
-      - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
-        # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
-
       - run:
-        name: install dependencies
-        command: |
-          curl -o- -L https://yarnpkg.com/install.sh | bash
-          yarn global add sass
-          bundle install --jobs=4 --retry=3 --path vendor/bundle
-          yarn
-      - save_cache:
-        paths:
-          - ./vendor/bundle
-          - ~/.cache/yarn
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
-        name: Database setup
-        command: bundle exec rails db:migrate
-      - run:
-        name: test
-        command: bundle exec rails test
+          name: test
+          command: bundle exec rails test
 
   deploy:
     docker:
@@ -63,20 +44,20 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-        version: 19.03.13
+          version: 19.03.13
       - heroku/install
       - run:
-        name: heroku login
-        command: heroku container:login
+          name: heroku login
+          command: heroku container:login
       - run:
-        name: push docker image
-        command: heroku container:push web -a $HEROKU_APP_NAME
+          name: push docker image
+          command: heroku container:push web -a $HEROKU_APP_NAME
       - run:
-        name: release docker image
-        command: heroku container:release web -a $HEROKU_APP_NAME
+          name: release docker image
+          command: heroku container:release web -a $HEROKU_APP_NAME
       - run:
-        name: database setup
-        command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
+          name: database setup
+          command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
 
 workflows:
   version: 2
@@ -84,11 +65,11 @@ workflows:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
       - deploy:
-        requires:
-          - test
-        filters:
-          branches:
-            only: main
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
