@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
-      -run:
+      - run:
         name: yarn Install
         command: yarn install
       - run:
