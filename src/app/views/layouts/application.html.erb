@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title><%= yield(:title) %> | Idea mixer</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,8 +9,28 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+
+    <header id="header">
+      <div class="top_box">
+        <h1><a href="#">Idea mixer</a></h1>
+        <div class="menu_btn">
+          <span class="hamburger-icon"></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <%= yield %>
+      </article>
+    </main>
+
+    <footer>
+      <div class="copyright">
+        <small>Copyright &copy; Route99 All Rights Reserved</small>
+      </div>
+    </footer>
+
   </body>
 </html>
