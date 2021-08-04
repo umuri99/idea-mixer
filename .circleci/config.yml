@@ -31,6 +31,7 @@ jobs:
       - checkout:
           path: ~/idea-mixer
       - ruby/install-deps
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
