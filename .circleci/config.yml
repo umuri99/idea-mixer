@@ -1,18 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.2
-  node: circleci/node@2
   heroku: circleci/heroku@1.2.3
-
-# setup
-commands:
-  setup:
-    steps:
-      - checkout:
-          path: ~/idea-mixer
-      - ruby/install-deps
-      - node/install-packages:
-          pkg-manager: yarn
 
 jobs:
   build:
@@ -20,7 +9,9 @@ jobs:
       - image: circleci/ruby:2.7-node
     working_directory: ~/idea-mixer/src
     steps:
-      - setup
+      - checkout:
+          path: ~/idea-mixer
+      - ruby/install-deps
 
   test:
     docker:
@@ -37,10 +28,13 @@ jobs:
       RAILS_ENV: test
     working_directory: ~/idea-mixer/src
     steps:
-      - setup
+      - checkout:
+          path: ~/idea-mixer
+      - ruby/install-deps
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
+      - run: yarn install
       - run:
           name: test
           command: bundle exec rake test
