@@ -9,6 +9,7 @@ commands:
   setup:
     steps:
       - checkout
+          path: ~/idea-mixer
       - ruby/install-deps
       - node/install-packages:
           pkg-manager: yarn
@@ -17,16 +18,14 @@ commands:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7
+      - image: circleci/ruby:2.7-node
     working_directory: ~/idea-mixer/src
     steps:
-      - checkout:
-          path: ~/idea-mixer
-      - ruby/install-deps
+      - setup
 
   test:
     docker:
-      - image: circleci/ruby:2.7
+      - image: circleci/ruby:2.7-node
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: IdeaMixerPass
@@ -39,9 +38,7 @@ jobs:
       RAILS_ENV: test
     working_directory: ~/idea-mixer/src
     steps:
-      - checkout:
-          path: ~/idea-mixer
-      - ruby/install-deps
+      - setup
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
@@ -51,7 +48,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/ruby:2.7
+      - image: circleci/ruby:2.7-node
     steps:
       - checkout
       - setup_remote_docker:
