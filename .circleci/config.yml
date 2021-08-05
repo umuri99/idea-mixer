@@ -31,17 +31,9 @@ jobs:
       - checkout:
           path: ~/idea-mixer
       - ruby/install-deps
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run: yarn install
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - node/install-packages:
+        pkg-manager: yarn
+        cache-key: "yarn.lock"
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
