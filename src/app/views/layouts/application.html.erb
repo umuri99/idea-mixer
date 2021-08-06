@@ -11,6 +11,7 @@
   </head>
   <body>
 
+    <% #ヘッダー▼ %>
     <header id="header">
       <div class="top_box wrap">
         <h1><a href="#" class="ff_lilita">Idea mixer</a></h1>
@@ -19,18 +20,36 @@
         </div>
       </div>
     </header>
+    <% #ヘッダー▲ %>
 
+    <% #コンテンツ▼ %>
     <main>
       <article>
         <%= yield %>
       </article>
     </main>
+    <% #コンテンツ▲ %>
 
+
+    <% #フッター▼ %>
     <footer id="footer">
       <div class="copyright">
         <small>Copyright &copy; Route99 All Rights Reserved</small>
       </div>
     </footer>
+    <% #フッター▲ %>
+
+    <% #ドロワー▼ %>
+    <div id="drawer">
+      <ul class="color_white fontBold">
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">このサイトについて</a></li>
+        <li><a href="#">投稿一覧</a></li>
+        <li><a href="#">お気に入り</a></li>
+        <li><a href="#">登録情報の変更</a></li>
+      </ul>
+    </div>
+    <% #ドロワー▲ %>
 
   </body>
 </html>
