@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
 });
 
 //Viewport
-var baseW = 950;
+var baseW = 1100;
 $(function () { updateMetaViewport(); });
 function updateMetaViewport() {
   var viewportContent;
