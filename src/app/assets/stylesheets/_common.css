@@ -1,15 +1,18 @@
 @charset "UTF-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 /*================================================
  *  一般・共通設定
  ================================================*/
 
 body {
 	font-size:16px;
-	font-family: "メイリオ",Meiryo,"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック","MS PGothic",Helvetica,sans-serif;
+	font-family: 'Noto Sans JP', sans-serif,"メイリオ",Meiryo,"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック","MS PGothic",Helvetica,sans-serif;
 	color: #333;
 	text-align: justify;
 	text-justify: inter-ideograph;
+  background-color: #CDE2F2;
+  font-size: 18px;
 }
 
 a,.linearAnime {
@@ -75,8 +78,8 @@ img,svg {
 	text-align: center;
 }
 /*文字種類*/
-.ff_english {
-	font-family: 'Roboto', sans-serif;
+.ff_lilita {
+  font-family: 'Lilita One', cursive;
 	font-weight: 400;
 }
 /*文字太さ*/
@@ -102,7 +105,7 @@ img,svg {
 
 /*幅*/
 .wrap {
-	max-width: 940px;
+	max-width: 950px;
 	margin: 0 auto;
 	width: 100%;
 }
@@ -118,13 +121,81 @@ img,svg {
 /*================================================
  *  ヘッダー
  ================================================*/
-
+header {
+  background-color: #DDEBF6;
+  height: 90px;
+}
+header .top_box {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+header .top_box h1 {
+  font-size: 38px;
+}
+header .top_box .menu_btn {}
 /*================================================
  *  ナビゲーション
  ================================================*/
 /*******ハンバーガー*******/
 #menu_btn {
-	display: none;
+	width: 50px;
+	height: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	position: fixed;
+	top: 20px;
+	right: 145px;
+	z-index: 1000;
+  background-color: #1E9BEC;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#menu_btn .hamburger-icon {
+	position: relative;
+	display: block;
+}
+#menu_btn .hamburger-icon,
+#menu_btn .hamburger-icon:before,
+#menu_btn .hamburger-icon:after {
+	width: 20px;
+	height: 2px;
+	-webkit-transition: all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+	transition: all .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+	background-color: #fff;
+}
+#menu_btn .hamburger-icon:before,
+#menu_btn .hamburger-icon:after {
+	position: absolute;
+	top: 5px;
+	left: 0;
+	content: '';
+}
+#menu_btn .hamburger-icon:after {
+	top: -5px;
+}
+#menu_btn.active .hamburger-icon {
+	background-color: transparent;
+}
+#menu_btn.active .hamburger-icon:before,
+#menu_btn.active .hamburger-icon:after {
+	top: 0;
+}
+#menu_btn.active .hamburger-icon:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#menu_btn.active .hamburger-icon:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 /*******ドロワー*******/
@@ -209,8 +280,15 @@ img,svg {
  *  フッター
  ================================================*/
 footer {
+  background-color: #AACEE8;
 }
-
+footer .copyright {
+  text-align: center;
+  font-size: 12px;
+  padding: 1em 0;
+}
+footer .copyright small {
+}
 
 /*================================================
  *  スマートフォン向けデザイン
