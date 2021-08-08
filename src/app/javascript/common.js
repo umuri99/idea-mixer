@@ -52,7 +52,6 @@ window.addEventListener("orientationchange", function () {
 });
 
 
-
 //Animate.css用
 $(window).on('load scroll', function () {
   var elem = $('.animated');
