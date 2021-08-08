@@ -32,7 +32,6 @@ function updateMetaViewport() {
     viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0";
   }
   document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
-  pcspImg();
 }
 
 
@@ -43,7 +42,6 @@ window.addEventListener("resize", function () {
   }
   currentWidth = window.innerWidth;
   updateMetaViewport();
-  pcspImg();
 });
 window.addEventListener("orientationchange", function () {
   if (currentWidth == window.innerWidth) {
@@ -51,7 +49,6 @@ window.addEventListener("orientationchange", function () {
   }
   currentWidth = window.innerWidth;
   updateMetaViewport();
-  pcspImg();
 });
 
 

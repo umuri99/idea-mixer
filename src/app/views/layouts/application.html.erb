@@ -7,13 +7,17 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
   <body>
 
     <% #ヘッダー▼ %>
     <header id="header">
       <div class="top_box wrap">
-        <h1><a href="#" class="ff_lilita">Idea mixer</a></h1>
+        <h1><%= link_to "Idea mixer", '#', class: "ff_lilita" %></h1>
         <div id="menu_btn">
           <span class="hamburger-icon"></span>
         </div>
@@ -41,11 +45,11 @@
     <% #ドロワー▼ %>
     <div id="drawer">
       <ul class="color_white fontBold">
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">このサイトについて</a></li>
-        <li><a href="#">投稿一覧</a></li>
-        <li><a href="#">お気に入り</a></li>
-        <li><a href="#">登録情報の変更</a></li>
+        <li><%= link_to "ホーム", '#' %></li>
+        <li><%= link_to "このサイトについて", '#' %></li>
+        <li><%= link_to "投稿一覧", '#' %></li>
+        <li><%= link_to "お気に入り", '#' %></li>
+        <li><%= link_to "登録情報の変更", '#' %></li>
       </ul>
     </div>
     <% #ドロワー▲ %>
