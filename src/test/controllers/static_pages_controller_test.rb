@@ -6,20 +6,19 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @base_title="Idea mixer"
   end
 
-  test "should get root" do
-    get root_url
-    assert_response :success
-  end
-
   test "should get home" do
-    get static_pages_home_url
+    # /にgetリクエストを送ってレスポンスが帰ってくるか
+    get root_path
     assert_response :success
+    #titleタグの中身が正しいか確認
     assert_select "title", "#{@base_title}"
   end
 
   test "should get about" do
-    get static_pages_about_url
+    # /aboutにgetリクエストを送ってレスポンスが帰ってくるのか確認
+    get about_path
     assert_response :success
+    #titleタグの中身が正しいか確認
     assert_select "title", "このサイトについて | #{@base_title}"
   end
 end
