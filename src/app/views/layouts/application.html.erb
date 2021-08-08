@@ -7,23 +7,13 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
 
-    <% #ヘッダー▼ %>
-    <header id="header">
-      <div class="top_box wrap">
-        <h1><%= link_to "Idea mixer", '#', class: "ff_lilita" %></h1>
-        <div id="menu_btn">
-          <span class="hamburger-icon"></span>
-        </div>
-      </div>
-    </header>
-    <% #ヘッダー▲ %>
+  <% #ヘッダー▼ %>
+  <%= render 'layouts/header' %>
+  <% #ヘッダー▲ %>
 
     <% #コンテンツ▼ %>
     <main>
@@ -33,25 +23,12 @@
     </main>
     <% #コンテンツ▲ %>
 
-
     <% #フッター▼ %>
-    <footer id="footer">
-      <div class="copyright">
-        <small>Copyright &copy; Route99 All Rights Reserved</small>
-      </div>
-    </footer>
+    <%= render 'layouts/footer' %>
     <% #フッター▲ %>
 
     <% #ドロワー▼ %>
-    <div id="drawer">
-      <ul class="color_white fontBold">
-        <li><%= link_to "ホーム", '#' %></li>
-        <li><%= link_to "このサイトについて", '#' %></li>
-        <li><%= link_to "投稿一覧", '#' %></li>
-        <li><%= link_to "お気に入り", '#' %></li>
-        <li><%= link_to "登録情報の変更", '#' %></li>
-      </ul>
-    </div>
+    <%= render 'layouts/drawer' %>
     <% #ドロワー▲ %>
 
   </body>
