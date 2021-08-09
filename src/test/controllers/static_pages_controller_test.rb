@@ -7,7 +7,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get home" do
-    # /にgetリクエストを送ってレスポンスが帰ってくるか
+    #/にgetリクエストを送ってレスポンスが帰ってくるか
     get root_path
     assert_response :success
     #titleタグの中身が正しいか確認
@@ -15,7 +15,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get about" do
-    # /aboutにgetリクエストを送ってレスポンスが帰ってくるのか確認
+    #/aboutにgetリクエストを送ってレスポンスが帰ってくるのか確認
     get about_path
     assert_response :success
     #titleタグの中身が正しいか確認
