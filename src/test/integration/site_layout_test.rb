@@ -13,5 +13,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     #/aboutのgetリクエストを送る
     get about_path
     assert_select "title", full_title("このサイトについて")
+    #/signupのgetリクエストを送る
+    get signup_path
+    assert_select "title", full_title("アカウント作成")
   end
 end
