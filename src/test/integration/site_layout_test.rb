@@ -3,6 +3,7 @@ require "test_helper"
 class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   test "layout links" do
+
     # /にゲットリクエストを送る
     get root_path
     # テンプレートが正しいか確認
@@ -16,5 +17,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     #/signupのgetリクエストを送る
     get signup_path
     assert_select "title", full_title("アカウント作成")
+
   end
 end
