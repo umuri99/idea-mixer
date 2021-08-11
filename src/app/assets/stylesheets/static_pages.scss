@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// home用CSS
+/* home用CSS */
 section.main_area {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 85px;
+  padding-top: 25px;
   > div {
     text-align: center;
     h2 {

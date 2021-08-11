@@ -1,3 +1,21 @@
 <% provide(:title, "アカウント作成") %>
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<section class="sign_up_area">
+  <h2>アカウントの作成</h2>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :name, "ユーザー名" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "パスワードの確認" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "アカウントを作成する", class: "" %>
+  <% end %>
+</section>
