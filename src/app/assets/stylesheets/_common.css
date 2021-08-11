@@ -280,14 +280,17 @@ header .top_box .menu_btn {}
 /*================================================
  *  ページタイトル
  ================================================*/
-#pageTitle {
+#page_title {
+  font-size: 29px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 /*================================================
  *  コンテンツ
  ================================================*/
 .contents {
-	padding: 0 0 50px;
+	padding-top: 60px;
 }
 
 /*******ボタン*******/
@@ -325,6 +328,118 @@ header .top_box .menu_btn {}
 .button input:hover,
 .button a:hover{
 	opacity: 0.7!important;
+}
+/*******箇条書きリスト*******/
+.kome_list li,
+.disc_list li,
+.circle_list li,
+.square_list li,
+.indent_list li {
+	list-style-position:inside;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+/*※箇条書き*/
+.kome_list > li:before{
+	display: inline;
+	content: "\203b";
+}
+/*・箇条書き*/
+.disc_list > li:before{
+	display: inline;
+	content: "\30fb";
+}
+/*●箇条書き*/
+.circle_list > li:before{
+	display: inline;
+	content: "\25CF";
+}
+/*■箇条書き*/
+.square_list > li:before{
+	display: inline;
+	content: "\25A0";
+}
+/*()数字*/
+.number_list li{
+	padding-left: 2.16em;
+	text-indent: -2.66em;
+	list-style-type:none;
+	list-style-position:inside;
+	counter-increment: cnt;
+}
+.number_list li:before{
+	display: inline;
+	content: "（" counter(cnt) "）";
+}
+/*数字.*/
+.decimal_list li{
+	padding-left: 1em;
+	text-indent: -1em;
+	list-style-type:none;
+	list-style-position:inside;
+	counter-increment: dcnt;
+}
+.decimal_list li:before{
+	display: inline;
+	content: counter(dcnt) ".";
+}
+
+/*******フォーム*******/
+label {
+  font-weight: bold;
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+  display: block;
+  width: 100%;
+  padding: 0.1em 0 0.1em 0.5em;
+  margin: 5px 0 15px;
+  border: 1px solid #707070;
+  border-radius: 1em;
+}
+input[type=submit] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #1996dc;
+  background: linear-gradient(80deg, #1d9bec, #1d9bec 355px, #039be5 405px, #00b7ee 455px, #00d0e8 505px, #00e7d8 535px, #7afac4);
+  background-size: 655px 2.6em;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8em 0;
+  border-radius: 3em;;
+  cursor: pointer;
+  transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+input[type=submit]:hover {
+  background-position: 100% 0;
+}
+
+/*******フォームメッセージ*******/
+.alert {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.alert_success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+.alert_danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+#error_explanation ul {
+  color: red;
+  margin: 0 0 20px 0;
+  line-height: 1.75;
+  font-size: 14px;
 }
 
 /*================================================
@@ -516,14 +631,14 @@ img {
 /*================================================
  *  ページタイトル
  ================================================*/
-#pageTitle {
+#page_title {
 }
 
 /*================================================
  *  コンテンツ
  ================================================*/
 .contents {
-	padding: 8vw 0 10vw;
+	padding-top: 8vw;
 }
 
 /*******ボタン*******/

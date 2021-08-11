@@ -15,3 +15,14 @@
  */
 @import "reset";
 @import "common";
+
+/* miscellaneous */
+
+.debug_dump {
+  background: gray;;
+  color: #fff;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #000;
+}

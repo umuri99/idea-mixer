@@ -1,0 +1,8 @@
+<% provide(:title, @user.name) %>
+<section class="user_posts_area wrap">
+  <h2 id="page_title"><%= @user.name %>の投稿</h2>
+</section>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
