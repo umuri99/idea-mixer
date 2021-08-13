@@ -26,19 +26,22 @@ function updateMetaViewport() {
 }
 
 /*resize*/
-window.addEventListener("resize", function () {
-  if (currentWidth == window.innerWidth) {
-    return;
-  }
-  currentWidth = window.innerWidth;
-  updateMetaViewport();
-});
-window.addEventListener("orientationchange", function () {
-  if (currentWidth == window.innerWidth) {
-    return;
-  }
-  currentWidth = window.innerWidth;
-  updateMetaViewport();
+document.addEventListener("turbolinks:load", function () {
+
+  window.addEventListener("resize", function () {
+    if (currentWidth == window.innerWidth) {
+      return;
+    }
+    currentWidth = window.innerWidth;
+    updateMetaViewport();
+  });
+  window.addEventListener("orientationchange", function () {
+    if (currentWidth == window.innerWidth) {
+      return;
+    }
+    currentWidth = window.innerWidth;
+    updateMetaViewport();
+  });
 });
 
 document.addEventListener("turbolinks:load", function () {
@@ -51,7 +54,7 @@ document.addEventListener("turbolinks:load", function () {
     $('#drawer').toggleClass('active');
   });
 
-})
+});
 
 /*--------------------------------------------------------------------------*
  *
