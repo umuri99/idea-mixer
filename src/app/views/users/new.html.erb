@@ -1,6 +1,7 @@
 <% provide(:title, "アカウント作成") %>
 <section class="sign_up_area">
   <h2>アカウントの作成</h2>
+  <%= render 'layouts/flash' %>
   <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'shared/error_messages' %>
 

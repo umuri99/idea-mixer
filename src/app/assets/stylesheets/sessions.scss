@@ -1,0 +1,24 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* ログイン画面用CSS */
+section.login_area {
+  width: 355px;
+  margin: 0 auto;
+  h2 {
+    font-size: 29px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 80%;
+    color: #0645ad;
+  }
+  a:hover {
+    color: #f7931e;
+  }
+}

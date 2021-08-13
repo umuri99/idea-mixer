@@ -1,0 +1,19 @@
+<% provide(:title, "ログイン") %>
+<% provide(:section, "login_area") %>
+<section class="login_area">
+  <h2>ログイン</h2>
+  <%= render 'layouts/flash' %>
+  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "ログイン" %>
+  <% end %>
+
+  <p><%= link_to "新規アカウント作成はこちら", signup_path %></p>
+
+</section>
