@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
 var currentWidth = window.innerWidth;
 var spWidth = 500;
 var baseW = 1100;
-$(function () { updateMetaViewport(); });
+
 function updateMetaViewport() {
   var viewportContent;
   var w = window.outerWidth;
@@ -42,6 +42,9 @@ window.addEventListener("orientationchange", function () {
 });
 
 document.addEventListener("turbolinks:load", function () {
+  //タブレット表示をPC画面ベースでサイズを合わせる
+  updateMetaViewport();
+
   //ハンバーガーメニュー起動用
   $('#menu_btn').click(function () {
     $(this).toggleClass('active');
