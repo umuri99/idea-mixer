@@ -25,25 +25,31 @@ function updateMetaViewport() {
   document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
 }
 
-/*resize*/
-window.addEventListener("resize", function () {
-  if (currentWidth == window.innerWidth) {
-    return;
-  }
-  currentWidth = window.innerWidth;
+$(document).on('turbolinks:load', function () {
+
+  //タブレット表示をPC画面ベースでサイズを合わせる
   updateMetaViewport();
-});
-window.addEventListener("orientationchange", function () {
-  if (currentWidth == window.innerWidth) {
-    return;
-  }
-  currentWidth = window.innerWidth;
-  updateMetaViewport();
+
+  $(window).on("load resize", function () {
+    if (currentWidth == window.innerWidth) {
+      return;
+    }
+    currentWidth = window.innerWidth;
+    updateMetaViewport();
+  });
+
+  /*resize*/
+  $(window).on("load orientationchange", function () {
+    if (currentWidth == window.innerWidth) {
+      return;
+    }
+    currentWidth = window.innerWidth;
+    updateMetaViewport();
+  });
+
 });
 
 document.addEventListener("turbolinks:load", function () {
-  //タブレット表示をPC画面ベースでサイズを合わせる
-  updateMetaViewport();
 
   //ハンバーガーメニュー起動用
   $('#menu_btn').click(function () {
