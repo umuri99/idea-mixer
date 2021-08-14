@@ -5,27 +5,26 @@ window.addEventListener('load', function () {
   objectFitImages();
 });
 
-//Viewport
-var currentWidth = window.innerWidth;
-var spWidth = 500;
-var baseW = 1100;
-
-function updateMetaViewport() {
-  var viewportContent;
-  var w = window.outerWidth;
-  var cw = document.documentElement.clientWidth;
-  if (!w) {
-    w = cw;
-  }
-  if (w > spWidth) {
-    viewportContent = "width=" + baseW;
-  } else {
-    viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0";
-  }
-  document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
-}
-
 $(document).on('turbolinks:load', function () {
+  //Viewport
+  var currentWidth = window.innerWidth;
+  var spWidth = 500;
+  var baseW = 1100;
+
+  function updateMetaViewport() {
+    var viewportContent;
+    var w = window.outerWidth;
+    var cw = document.documentElement.clientWidth;
+    if (!w) {
+      w = cw;
+    }
+    if (w > spWidth) {
+      viewportContent = "width=" + baseW;
+    } else {
+      viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0";
+    }
+    document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
+  }
 
   //タブレット表示をPC画面ベースでサイズを合わせる
   updateMetaViewport();
