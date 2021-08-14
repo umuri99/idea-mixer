@@ -23,10 +23,10 @@ function updateMetaViewport() {
   }
   document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
 }
+
 /*resize*/
 window.addEventListener("resize", function () {
   var currentWidth = window.innerWidth;
-  alert("リサイズされました");
   if (currentWidth == window.innerWidth) {
     return;
   }
@@ -46,7 +46,7 @@ window.addEventListener("orientationchange", function () {
 document.addEventListener("turbolinks:load", function () {
 
   //タブレット表示をPC画面ベースでサイズを合わせる
-  viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0";
+  viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no";
   document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
   updateMetaViewport();
 
