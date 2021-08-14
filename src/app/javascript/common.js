@@ -6,9 +6,8 @@ window.addEventListener('load', function () {
 });
 
 //Viewport
-var currentWidth = window.innerWidth;
 var spWidth = 500;
-var baseW = 1300;
+var baseW = 1100;
 $(function () { updateMetaViewport(); });
 function updateMetaViewport() {
   var viewportContent;
@@ -26,6 +25,8 @@ function updateMetaViewport() {
 }
 /*resize*/
 window.addEventListener("resize", function () {
+  var currentWidth = window.innerWidth;
+  alert("リサイズされました");
   if (currentWidth == window.innerWidth) {
     return;
   }
