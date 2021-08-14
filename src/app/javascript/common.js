@@ -5,26 +5,46 @@ window.addEventListener('load', function () {
   objectFitImages();
 });
 
-$(document).on('turbolinks:load', function () {
-  //Viewport
-  var currentWidth = window.innerWidth;
-  var spWidth = 500;
-  var baseW = 1100;
+//Viewport
+var currentWidth = window.innerWidth;
+var spWidth = 500;
+var baseW = 1100;
 
-  function updateMetaViewport() {
-    var viewportContent;
-    var w = window.outerWidth;
-    var cw = document.documentElement.clientWidth;
-    if (!w) {
-      w = cw;
-    }
-    if (w > spWidth) {
-      viewportContent = "width=" + baseW;
-    } else {
-      viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0";
-    }
-    document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
+function updateMetaViewport() {
+  var viewportContent;
+  var w = window.outerWidth;
+  var cw = document.documentElement.clientWidth;
+  if (!w) {
+    w = cw;
   }
+  if (w > spWidth) {
+    viewportContent = "width=" + baseW;
+  } else {
+    viewportContent = "width=device-width,initial-scale=1.0,minimum-scale=1.0";
+  }
+  document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
+}
+
+$(function () { updateMetaViewport(); });
+
+/*resize*/
+window.addEventListener("resize", function () {
+  if (currentWidth == window.innerWidth) {
+    return;
+  }
+  currentWidth = window.innerWidth;
+  updateMetaViewport();
+});
+window.addEventListener("orientationchange", function () {
+  if (currentWidth == window.innerWidth) {
+    return;
+  }
+  currentWidth = window.innerWidth;
+  updateMetaViewport();
+});
+
+//turbolinks用イベントリスナー
+$(document).on('turbolinks:load', function () {
 
   //タブレット表示をPC画面ベースでサイズを合わせる
   updateMetaViewport();
@@ -124,6 +144,13 @@ new function () {
       elm.attachEvent("on" + listener, fn);
     }
   }
+  addEvent(window, "load", footerFixed);
+  addEvent(window, "load", function () {
+    checkFontSize(footerFixed);
+  });
+  addEvent(window, "resize", footerFixed);
+
+  //turbolink用イベントリスナー
   $(document).on('turbolinks:load', function () {
     footerFixed();
     checkFontSize(footerFixed);
