@@ -125,10 +125,17 @@ new function () {
       elm.attachEvent("on" + listener, fn);
     }
   }
-  document.addEventListener("turbolinks:load", function () {
+  $(document).on('turbolinks:load', function () {
     footerFixed();
     checkFontSize(footerFixed);
+    $(window).on("load resize", function () {
+      footerFixed();
+    });
+
+    $(window).on("load orientationchange", function () {
+      footerFixed();
+    });
+
   });
-  addEvent(window, "resize", footerFixed);
 
 }
