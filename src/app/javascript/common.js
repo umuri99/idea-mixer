@@ -1,20 +1,3 @@
-// //スマホやタブレットの２本指以上の操作を禁止
-// document.addEventListener('touchstart', event => {
-//   if (event.touches.length > 1) {
-//     event.preventDefault();
-//   }
-// }, true);
-
-// //スマホやタブレットのダブルタップイベントを禁止する
-// let lastTouch = 0;
-// document.addEventListener('touchend', event => {
-//   const now = window.performance.now();
-//   if (now - lastTouch <= 500) {
-//     event.preventDefault();
-//   }
-//   lastTouch = now;
-// }, true);
-
 //Viewport
 var spWidth = 500;
 var baseW = 1100;
