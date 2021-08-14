@@ -26,22 +26,19 @@ function updateMetaViewport() {
 }
 
 /*resize*/
-document.addEventListener("turbolinks:load", function () {
-
-  window.addEventListener("resize", function () {
-    if (currentWidth == window.innerWidth) {
-      return;
-    }
-    currentWidth = window.innerWidth;
-    updateMetaViewport();
-  });
-  window.addEventListener("orientationchange", function () {
-    if (currentWidth == window.innerWidth) {
-      return;
-    }
-    currentWidth = window.innerWidth;
-    updateMetaViewport();
-  });
+window.addEventListener("resize", function () {
+  if (currentWidth == window.innerWidth) {
+    return;
+  }
+  currentWidth = window.innerWidth;
+  updateMetaViewport();
+});
+window.addEventListener("orientationchange", function () {
+  if (currentWidth == window.innerWidth) {
+    return;
+  }
+  currentWidth = window.innerWidth;
+  updateMetaViewport();
 });
 
 document.addEventListener("turbolinks:load", function () {
