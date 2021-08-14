@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "${RAILS_ENV}" = "production" ] || [ "${RAILS_ENV}" = "test" ]
+if [ "${RAILS_ENV}" = "production" ]
 then
     bundle exec rails assets:precompile
 fi
