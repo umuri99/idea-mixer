@@ -36,6 +36,8 @@ jobs:
           command: bundle exec rails db:migrate
       - run: yarn install
       - run:
+          command: bundle exec rails assets:precompile
+      - run:
           name: test
           command: bundle exec rails test
 
