@@ -1,0 +1,15 @@
+<% provide(:title, "登録情報の変更") %>
+<% provide(:button_text, '変更を保存') %>
+
+<section class="user_edit_area">
+  <h2>登録情報の変更</h2>
+  <%= render 'layouts/flash' %>
+  <%= render 'form' %>
+
+  <div class="gravatar_edit">
+    <%= gravatar_for @user %>
+    <a href="https://gravatar.com/emails" target="_blank" rel="noopener nofollow">画像を変更する</a>
+  </div>
+
+
+</section>
