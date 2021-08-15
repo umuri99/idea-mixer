@@ -39,6 +39,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete logout_path
     assert_not is_logged_in?
     assert_redirected_to root_url
+
+    # 2番目のウィンドウでログアウトをクリックするユーザーをシミュレートする
+    delete logout_path
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", signup_path
@@ -47,4 +50,19 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     #後でお気に入りページと登録情報の変更ページのリンクについてもテストを追記しないといけない
   end
 
+  #「次回から自動ログイン」チェックボックスにチェックを入れてログインすると、cookieにremember_tokenが保存されるテスト
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_equal cookies['remember_token'], assigns(:user).remember_token
+  end
+
+  #ログアウトするとremember_tokenのcookieが消えるかどうか確認のテスト
+  test "login without remembering" do
+    # cookieを保存してログイン
+    log_in_as(@user, remember_me: '1')
+    delete logout_path
+    # cookieを削除してログイン
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies[:remember_token]
+  end
 end
