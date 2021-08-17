@@ -1,0 +1,10 @@
+<h1>Idea mixer</h1>
+
+<p>ようこそ<%= @user.name %>さん</p>
+
+<p>
+以下のリンクをクリックして、アカウントを有効にしてください。
+</p>
+
+<%= link_to "アカウントを有効化する", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
