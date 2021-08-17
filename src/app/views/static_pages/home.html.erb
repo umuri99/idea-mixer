@@ -1,12 +1,15 @@
 <section class="main_area">
+  <%= render 'layouts/flash' %>
   <% if !logged_in? %>
-    <div>
-      <h2 class="ff_lilita color_white">Idea mixer</h2>
-      <p>運命的な<br>アイデアとの出会い</p>
-      <p>Idea mixerは<br>新しいアイデアを見つける<br>お手伝いをします。</p>
-      <div class="btn_box color_white">
-        <%= link_to "アカウント作成", signup_path %>
-        <%= link_to "ログイン", login_path %>
+    <div class="not_loged_in">
+      <div>
+        <h2 class="ff_lilita color_white">Idea mixer</h2>
+        <p>運命的な<br>アイデアとの出会い</p>
+        <p>Idea mixerは<br>新しいアイデアを見つける<br>お手伝いをします。</p>
+        <div class="btn_box color_white">
+          <%= link_to "アカウント作成", signup_path %>
+          <%= link_to "ログイン", login_path %>
+        </div>
       </div>
     <div>
   <% else %>
