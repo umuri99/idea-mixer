@@ -1,0 +1,18 @@
+<% provide(:title, "パスワードの再設定") %>
+<section class="password_reset_area">
+  <h2>パスワードの再設定</h2>
+  <%= render 'layouts/flash' %>
+  <%= form_with(model: @user, url: password_reset_path(params[:id]), local: true) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= hidden_field_tag :email, @user.email %>
+
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "パスワードの確認" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "パスワードを更新する" %>
+  <% end %>
+</section>
