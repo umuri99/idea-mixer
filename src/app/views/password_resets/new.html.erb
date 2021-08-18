@@ -1,6 +1,6 @@
-<% provide(:title, "パスワードをお忘れですか？") %>
+<% provide(:title, "パスワード再設定用のメールを送信") %>
 <section class="forgot_password_area">
-  <h2>パスワードをお忘れですか？</h2>
+  <h2>パスワード再設定用<br>メールを送信</h2>
   <%= render 'layouts/flash' %>
 
   <%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
