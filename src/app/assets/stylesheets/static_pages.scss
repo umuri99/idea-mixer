@@ -5,30 +5,37 @@
 /* home用CSS */
 section.main_area {
   padding-top: 25px;
+
   .not_loged_in {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
     > div {
+
       h2 {
         font-size: 84px;
         position: relative;
         top: 40px;
         z-index: -1;
       }
+
       p:first-of-type {
         font-size: 50px;
       }
+
       p {
         font-size: 20px;
         font-weight: bold;
         line-height: 1.5;
       }
+
       .btn_box {
         display: flex;
         justify-content: center;
         margin-top: 20px;
+
         a {
           display: flex;
           justify-content: center;
@@ -38,10 +45,15 @@ section.main_area {
           width: 200px;
           border-radius: 2.6em;
         }
+
         a:not(:first-of-type) {
           margin-left: 10px;
         }
+
       }
+
     }
+
   }
+
 }

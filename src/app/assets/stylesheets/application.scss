@@ -13,12 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
 @import "initialize";
 @import "common";
 
-/* miscellaneous */
-
+/* デバッグ表示用 */
 .debug_dump {
   background: gray;;
   color: #fff;
@@ -26,4 +24,120 @@
   width: 80%;
   margin: 0 auto;
   border: 2px solid #000;
+}
+
+/*投稿リスト一覧用*/
+.post_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  li {
+    width: 450px;
+
+    a {
+      padding: 20px;
+      display: block;
+      border-radius: 0.5em;
+      background-color: #fff;
+
+      .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.9em;
+
+        h3 {
+          margin-left: 1.1em;
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+      }
+
+      .theme1, .theme2 {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.3em;
+        text-align: center;
+      }
+
+      > span {
+        display: block;
+        height: 20px;
+        width: 20px;
+        margin: 5px auto;
+        position: relative;
+
+        &::before, &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          background-color: #333;
+          width: 100%;
+          height: 2px;
+          display: block;
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+
+      }
+
+      .post_info {
+        margin-top: 0.5em;
+        line-height: 1.75;
+      }
+
+    }
+  }
+  li:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+
+}
+
+/* ページネーション */
+.pagination {
+  margin-top: 1em;
+  display: flex;
+
+  .page-item {
+
+    .page-link {
+      position: relative;
+      display: block;
+      padding: 0.5rem 0.75rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: #007bff;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+    }
+
+    &.active .page-link {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    &:first-child .page-link {
+      margin-left: 0;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    &:last-child .page-link {
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+  }
+
 }
