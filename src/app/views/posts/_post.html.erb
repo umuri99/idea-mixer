@@ -1,0 +1,14 @@
+<ul class="post_list">
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to "/posts/#{post.id}" do %>
+        <div class="title"><%= gravatar_for post.user %><h3><%= post.title %></h3></div>
+        <div class="theme1"><%= post.theme1 %></div>
+        <span></span>
+        <div class="theme2"><%= post.theme2 %></div>
+        <div class="post_info">投稿者:<%= post.user.name %><br>投稿日:<%= post.created_at.strftime("%Y年%m月%d日") %></div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<%= paginate @posts %>

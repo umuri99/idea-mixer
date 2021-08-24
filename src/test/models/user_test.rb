@@ -85,4 +85,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  #登録ユーザーが削除されたらそのユーザーの投稿したデータを削除する
+  test "associated posts should be destroyed" do
+    @user.save
+    @user.posts.create!(title: "test title", theme1: "theme1", theme2: "theme2", content: "Lorem ipsum")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
+  end
+
 end
