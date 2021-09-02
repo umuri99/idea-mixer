@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-/* アカウント作成用CSS */
+/* アカウント作成用 */
 section.sign_up_area {
   width: 355px;
   margin: 0 auto;
@@ -12,6 +12,39 @@ section.sign_up_area {
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
+  }
+
+}
+
+/*登録情報変更用*/
+section.user_edit_area {
+
+  width: 355px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 29px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  form {
+
+    input[type=submit] {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  .gravatar_edit {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: 1em;
+    }
+
   }
 
 }

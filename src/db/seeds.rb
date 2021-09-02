@@ -22,8 +22,23 @@ User.create!(name:  "太郎",
              activated: true,
              activated_at: Time.zone.now)
 
-# 素材を作成
+User.create!(name:  "太郎２号",
+             email: "example2@railstutorial.org",
+             password:              "aaaaaaaa",
+             password_confirmation: "aaaaaaaa",
+             activated: true,
+             activated_at: Time.zone.now)
 
+#ユーザーの投稿を作成
+21.times do |i|
+  users = User.order(:created_at).take(3)
+  title = "タイトル#{i}"
+  content = "コンテンツ#{i}" * 30
+  users.each { |user| user.posts.create!(title: title, theme1: "テーマ１", theme2: "テーマ２", content: content) }
+end
+
+
+# 素材を作成
 #メーカー系
 Material.create!(theme: "食品")
 Material.create!(theme: "農林")

@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :posts,               only: [:index, :new, :create, :show]
+  resources :posts,               only: [:index, :create, :new, :show, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

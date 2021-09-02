@@ -4,6 +4,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.page(params[:page]).per(8)
+  end
+
+  def favorite
+
   end
 
   def new
@@ -43,15 +48,6 @@ class UsersController < ApplicationController
     end
 
     #ここからbeforeアクション▼
-
-    #ログイン済みのユーザーかどうか確認する
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
-    end
 
     #正しいユーザーかどうかの確認
     def correct_user

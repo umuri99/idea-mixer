@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+/*ここからみんなの投稿一覧画面▼*/
 section.posts_index_area {
 
   h2 {
@@ -11,3 +12,153 @@ section.posts_index_area {
   }
 
 }
+/*ここまでみんなの投稿一覧画面▲*/
+
+
+/*ここから投稿画面▼*/
+/*リザルトエリア*/
+section.result_area {
+  width: 355px;
+  margin: 0 auto 60px;
+  text-align: center;
+
+  h2 {
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  form {
+
+    div {
+      font-weight: bold;
+    }
+
+    span {
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: relative;
+      margin: 5px auto;
+
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        display: block;
+        transform: translateY(-50%)
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+    }
+
+    input[type=submit] {
+      margin-top: 20px;
+    }
+
+  }
+
+}
+
+/*投稿エリア*/
+section.post_area {
+  form {
+    input[type=submit] {
+      width: 355px;
+      margin: 15px auto 0
+    }
+  }
+}
+/*ここまで投稿画面▲*/
+
+/*ここから投稿の詳細画面▼*/
+section.details_area {
+
+  h2 {
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .details_box {
+    background-color: #fff;
+    border-radius: 1em;
+    padding: 40px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      h3 {
+        margin-left: 1.1em;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+    }
+
+    .theme1 {
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3em;
+      text-align: center;
+    }
+
+    span {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      display: block;
+      margin: 5px auto;
+
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        display: block;
+        background-color: #333;
+      }
+
+      &::before {
+        transform: rotate(45deg)
+      }
+
+      &::after {
+        transform: rotate(-45deg)
+      }
+
+    }
+
+    .theme2 {
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3em;
+      text-align: center;
+    }
+
+    .contents_box {
+      margin: 20px 0;
+      line-height: 1.75;
+    }
+
+    .post_info {
+      line-height: 1.75;
+    }
+
+  }
+
+}
+/*ここまで投稿の詳細画面▲*/

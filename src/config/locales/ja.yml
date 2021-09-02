@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワードの確認
+
+      post:
+        title: アイデア名
+        theme1: テーマ１
+        theme2: テーマ２
+        content: アイデアの内容

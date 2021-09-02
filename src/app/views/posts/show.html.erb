@@ -1,0 +1,18 @@
+<% provide(:title, @post.title) %>
+<section class="details_area wrap">
+  <h2>投稿詳細</h2>
+  <%= render 'layouts/flash' %>
+  <div class="details_box">
+    <div class="title"><%= gravatar_for @post.user %><h3><%= @post.title %></h3></div>
+    <div class="theme1"><%= @post.theme1 %></div>
+    <span></span>
+    <div class="theme2"><%= @post.theme2 %></div>
+    <div class="contents_box"><%= simple_format @post.content %></div>
+    <div class="post_info">
+      投稿者:<%= @post.user.name %><br>投稿日:<%= @post.created_at.strftime("%Y年%m月%d日") %>
+      <% if current_user?(@post.user) %>
+        <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除してもいいですか?" } %>
+      <% end %>
+    </div>
+  </div>
+</section>

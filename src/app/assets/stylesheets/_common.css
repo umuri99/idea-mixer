@@ -36,6 +36,10 @@ img,svg {
 	vertical-align: bottom;
 }
 
+.gravatar {
+  border-radius: 50%;
+}
+
 /*色*/
 .color_main {
 	color: #14326e;
@@ -390,11 +394,12 @@ label {
 }
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+textarea {
   display: block;
   width: 100%;
   padding: 0.1em 0 0.1em 0.5em;
-  margin: 5px 0 15px;
+  margin: 10px 0 20px;
   border: 1px solid #707070;
   border-radius: 1em;
 }
@@ -426,7 +431,7 @@ input[type=submit]:hover {
   font-size: 14px;
   text-align: center;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 .alert_success {
   color: #0f5132;

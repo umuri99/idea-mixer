@@ -1,6 +1,8 @@
 <section class="main_area">
   <%= render 'layouts/flash' %>
+
   <% if !logged_in? %>
+
     <div class="not_loged_in">
       <div>
         <h2 class="ff_lilita color_white">Idea mixer</h2>
@@ -12,7 +14,25 @@
         </div>
       </div>
     <div>
+
   <% else %>
 
+    <section class="input_theme_area">
+      <h2>Mixer</h2>
+      <%= form_with(url: new_post_path, scope: :theme, local: true, method: "GET") do |f| %>
+
+        <%= f.label :theme1, "テーマ１" %>
+        <%= f.text_field :theme1 %>
+
+        <span></span>
+
+        <div>？？？</div>
+
+        <%= f.submit "Mix" %>
+      <% end %>
+
+    </section>
+
   <% end %>
+
 </section>

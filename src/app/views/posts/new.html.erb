@@ -1,0 +1,26 @@
+<% provide(:title, "Mixer") %>
+<section class="result_area">
+  <h2>Mixer</h2>
+  <%= render 'layouts/flash' %>
+    <%= form_with(url: new_post_path, scope: :theme, local: true, method: "GET") do |f| %>
+      <%= f.hidden_field :theme1, value: @theme1 %>
+      <div><%= @theme1 %></div>
+      <span></span>
+      <div><%= @theme2 %></div>
+
+      <%= f.submit "やり直す" %>
+
+    <% end %>
+</section>
+<section class="post_area wrap">
+  <%= form_with(model: @post, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.hidden_field :theme1, value: @theme1 %>
+    <%= f.hidden_field :theme2, value: @theme2 %>
+    <%= f.label :title, "アイデア名" %>
+    <%= f.text_field :title %>
+    <%= f.label :content, "アイデアの内容" %>
+    <%= f.text_area :content, placeholder: "アイデアの内容を記述して下さい...", rows: 20 %>
+    <%= f.submit "投稿する" %>
+  <% end %>
+</section>
