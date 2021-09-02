@@ -2,8 +2,5 @@
 <section class="user_posts_area wrap">
   <%= render 'layouts/flash' %>
   <h2 id="page_title"><%= @user.name %>の投稿</h2>
+  <%= render 'posts/post' %>
 </section>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
