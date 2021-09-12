@@ -21,5 +21,9 @@ module App
 
     #日本語化
     config.i18n.default_locale = :ja
+
+    #JavaScriptがブラウザ設定で無効にされている場合のAjax通信のための設定
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+
   end
 end

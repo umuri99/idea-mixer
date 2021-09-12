@@ -1,0 +1,15 @@
+one:
+  user: michael
+  post: post_1
+
+two:
+  user: michael
+  post: post_2
+
+three:
+  user: michael
+  post: post_3
+
+four:
+  user: michael
+  post: post_4

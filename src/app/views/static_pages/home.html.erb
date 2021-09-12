@@ -19,7 +19,7 @@
 
     <section class="input_theme_area">
       <h2>Mixer</h2>
-      <%= form_with(url: new_post_path, scope: :theme, local: true, method: "GET") do |f| %>
+      <%= form_with(url: new_post_path, scope: :theme, local: true, method: "GET", class: "basic_form") do |f| %>
 
         <%= f.label :theme1, "テーマ１" %>
         <%= f.text_field :theme1 %>

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -65,6 +67,21 @@ class User < ApplicationRecord
   # パスワード再設定の期限が切れている場合はtrueを返す
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  # 投稿をお気に入り登録する
+  def favorite(post)
+    favorite_posts << post
+  end
+
+  # 投稿のお気に入りを解除する
+  def unfavorite(post)
+    favorites.find_by(post_id: post.id).destroy
+  end
+
+  # 現在のユーザーがお気に入り登録していたらtrueを返す
+  def favorite?(post)
+    favorite_posts.include?(post)
   end
 
   private

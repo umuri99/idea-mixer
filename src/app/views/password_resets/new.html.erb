@@ -3,7 +3,7 @@
   <h2>パスワード再設定用<br>メールを送信</h2>
   <%= render 'layouts/flash' %>
 
-  <%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
+  <%= form_with(url: password_resets_path, scope: :password_reset, local: true, class: "basic_form") do |f| %>
 
     <%= f.label :email, "メールアドレス" %>
     <%= f.email_field :email %>
