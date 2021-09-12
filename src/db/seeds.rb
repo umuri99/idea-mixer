@@ -37,6 +37,12 @@ User.create!(name:  "太郎２号",
   users.each { |user| user.posts.create!(title: title, theme1: "テーマ１", theme2: "テーマ２", content: content) }
 end
 
+#ユーザーのお気に入り投稿を作成
+posts = Post.all
+user = User.first
+favorite_posts = posts[1..15]
+favorite_posts.each { |post| user.favorite(post) }
+
 
 # 素材を作成
 #メーカー系

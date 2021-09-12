@@ -51,11 +51,6 @@ img,svg {
 	color: #fff;
 }
 
-/*背景*/
-.bg_main {
-	background-color: #14326e;
-}
-
 /* position */
 .relative{
 	position: relative;
@@ -140,7 +135,7 @@ header .top_box h1 {
   position: relative;
   z-index: 1000;
 }
-header .top_box .menu_btn {}
+
 /*================================================
  *  ナビゲーション
  ================================================*/
@@ -392,10 +387,10 @@ header .top_box .menu_btn {}
 label {
   font-weight: bold;
 }
-input[type=text],
-input[type=email],
-input[type=password],
-textarea {
+.basic_form input[type=text],
+.basic_form input[type=email],
+.basic_form input[type=password],
+.basic_form textarea {
   display: block;
   width: 100%;
   padding: 0.1em 0 0.1em 0.5em;
@@ -403,7 +398,7 @@ textarea {
   border: 1px solid #707070;
   border-radius: 1em;
 }
-input[type=submit] {
+.basic_form input[type=submit] {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -418,7 +413,7 @@ input[type=submit] {
   cursor: pointer;
   transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-input[type=submit]:hover {
+.basic_form input[type=submit]:hover {
   background-position: 100% 0;
 }
 
@@ -473,8 +468,6 @@ footer .copyright {
   text-align: center;
   font-size: 12px;
   padding: 1em 0;
-}
-footer .copyright small {
 }
 
 /*================================================

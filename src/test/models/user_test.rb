@@ -94,4 +94,15 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  #お気に入り登録と解除のテスト
+  test "should favorite and unfavorite a user" do
+    michael = users(:michael)
+    post  = posts(:orange)
+    assert_not michael.favorite?(post)
+    michael.favorite(post)
+    assert michael.favorite?(post)
+    michael.unfavorite(post)
+    assert_not michael.favorite?(post)
+  end
+
 end

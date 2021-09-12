@@ -10,9 +10,12 @@
     <div class="contents_box"><%= simple_format @post.content %></div>
     <div class="post_info">
       投稿者:<%= @post.user.name %><br>投稿日:<%= @post.created_at.strftime("%Y年%m月%d日") %>
-      <% if current_user?(@post.user) %>
-        <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除してもいいですか?" } %>
-      <% end %>
+      <div class="right_box">
+        <% if current_user?(@post.user) %>
+          <%= link_to "", @post, method: :delete, data: { confirm: "本当に投稿を削除しますか?" }, class: "icon-delete" %>
+        <% end %>
+        <%= render 'favorite_form' if logged_in? %>
+      </div>
     </div>
   </div>
 </section>

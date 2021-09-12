@@ -2,7 +2,7 @@
 <section class="login_area">
   <h2>ログイン</h2>
   <%= render 'layouts/flash' %>
-  <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+  <%= form_with(url: login_path, scope: :session, local: true, class: "basic_form") do |f| %>
 
     <%= f.label :email, "メールアドレス" %>
     <%= f.email_field :email %>

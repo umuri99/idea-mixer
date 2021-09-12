@@ -45,4 +45,16 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
+  #ログインしていない状態で自分の投稿一覧ページへ行こうとするとログイン画面にリダイレクトするテスト
+  test "should redirect show when not logged in" do
+    get user_path(@user)
+    assert_redirected_to login_url
+  end
+
+  #ログインしていない状態でお気に入りページへ行こうとするとログイン画面にリダイレクトするテスト
+  test "should redirect favorites when not logged in" do
+    get favorite_user_path(@user)
+    assert_redirected_to login_url
+  end
+
 end

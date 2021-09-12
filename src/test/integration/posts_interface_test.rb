@@ -47,7 +47,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     # 投稿を削除する
     get post_path(posts(:orange))
     assert_template 'posts/show'
-    assert_select "a", text: "削除"
+    assert_select "a.icon-delete"
     assert_difference 'Post.count', -1 do
       delete post_path(posts(:orange))
     end
@@ -55,7 +55,7 @@ class PostsInterfaceTest < ActionDispatch::IntegrationTest
     # 他のユーザーの投稿の詳細ページに削除リンクがないことを確認,投稿者以外のdeleteリクエストを受付ないことをテスト
     get post_path(posts(:cat_video))
     assert_template 'posts/show'
-    assert_select "a", text: "削除", count: 0
+    assert_select "a.icon-delete", count: 0
     assert_difference 'Post.count', 0 do
       delete post_path(posts(:cat_video))
     end
