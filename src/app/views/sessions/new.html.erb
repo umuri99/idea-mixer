@@ -8,7 +8,7 @@
     <%= f.email_field :email %>
 
     <%= f.label :password, "パスワード" %>
-    <%= link_to "パスワードをお忘れですか？", new_password_reset_path %>
+    <%= link_to "パスワードをお忘れですか？", new_password_reset_path, class: "blue_link" %>
     <%= f.password_field :password %>
 
     <%= f.label :remember_me, class: "checkbox" do %>
@@ -19,6 +19,6 @@
     <%= f.submit "ログイン" %>
   <% end %>
 
-  <p><%= link_to "新規アカウント作成はこちら", signup_path %></p>
+  <p><%= link_to "新規アカウント作成はこちら", signup_path, class: "blue_link" %></p>
 
 </section>

@@ -7,23 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # メインのサンプルユーザーを1人作成する
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "aaaaaaaa",
-             password_confirmation: "aaaaaaaa",
-             activated: true,
-             activated_at: Time.zone.now)
+# User.create!(name:  "Example User",
+#              email: "example@railstutorial.org",
+#              password:              "aaaaaaaa",
+#              password_confirmation: "aaaaaaaa",
+#              activated: true,
+#              activated_at: Time.zone.now)
 
 # 追加のユーザー
 User.create!(name:  "太郎",
-             email: "example1@railstutorial.org",
+             email: "example1@example.com",
              password:              "aaaaaaaa",
              password_confirmation: "aaaaaaaa",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!(name:  "太郎２号",
-             email: "example2@railstutorial.org",
+User.create!(name:  "佐々木",
+             email: "example2@example.com",
              password:              "aaaaaaaa",
              password_confirmation: "aaaaaaaa",
              activated: true,
