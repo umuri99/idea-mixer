@@ -1,4 +1,5 @@
-/* home用CSS */
+/*ここからログイン前のホーム画面▼*/
+/* ホームエリア */
 section.main_area {
   padding-top: 25px;
 
@@ -53,7 +54,11 @@ section.main_area {
   }
 
 }
+/*ここからログイン前のホーム画面▲*/
 
+
+
+/*ここからログイン後のホーム画面▼*/
 /*テーマ入力エリア*/
 section.input_theme_area {
   width: 355px;
@@ -106,5 +111,29 @@ section.input_theme_area {
       margin-bottom: 20px;
       font-weight: bold;
     }
+
   }
+
 }
+/*ここまでログイン後のホーム画面▲*/
+
+/*ここからこのサイトについて画面▼*/
+section.about_area {
+
+  h3 {
+    font-weight: bold;
+    font-size: 29px;
+    margin-bottom: 15px;
+
+    &:not(:first-of-type) {
+      margin-top: 60px;
+    }
+
+  }
+
+  p {
+    line-height: 1.75;
+  }
+
+}
+/*ここまでこのサイトについて画面▲*/

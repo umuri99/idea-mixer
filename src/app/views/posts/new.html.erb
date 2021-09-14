@@ -2,7 +2,7 @@
 <section class="result_area">
   <h2>Mixer</h2>
   <%= render 'layouts/flash' %>
-    <%= form_with(url: new_post_path, scope: :theme, local: true, method: "GET") do |f| %>
+    <%= form_with(url: new_post_path, scope: :theme, local: true, method: "GET", class: "basic_form") do |f| %>
       <%= f.hidden_field :theme1, value: @theme1 %>
       <div><%= @theme1 %></div>
       <span></span>
@@ -13,7 +13,7 @@
     <% end %>
 </section>
 <section class="post_area wrap">
-  <%= form_with(model: @post, local: true) do |f| %>
+  <%= form_with(model: @post, local: true, class: "basic_form") do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.hidden_field :theme1, value: @theme1 %>
     <%= f.hidden_field :theme2, value: @theme2 %>
