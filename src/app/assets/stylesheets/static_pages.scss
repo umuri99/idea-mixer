@@ -137,3 +137,105 @@ section.about_area {
 
 }
 /*ここまでこのサイトについて画面▲*/
+
+
+
+
+
+/*================================================
+ *  スマートフォン向けデザイン
+ ================================================*/
+@media screen and (max-width:500px) {
+  /*ここからログイン前のホーム画面▼*/
+  /* ホームエリア */
+  section.main_area {
+    padding-top: 10vw;
+
+    .not_loged_in {
+
+      > div {
+
+        h2 {
+          font-size: 13vw;
+          top: 6vw;
+        }
+
+        p:first-of-type {
+          font-size: 8vw;
+        }
+
+        p {
+          font-size: 4vw;
+        }
+
+        .btn_box {
+          display: block;
+          margin-top: 5vw;
+
+          a {
+            padding: 0.8em 0;
+            width: 45vw;
+            border-radius: 2.6em;
+            margin: 0 auto;
+          }
+
+          a:not(:first-of-type) {
+            margin-top: 2.5vw;
+            margin-left: auto;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  /*ここからログイン前のホーム画面▲*/
+
+
+
+  /*ここからログイン後のホーム画面▼*/
+  /*テーマ入力エリア*/
+  section.input_theme_area {
+    width: 80vw;
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+    }
+
+    form {
+
+      span {
+        width: 5vw;
+        height: 5vw;
+        margin: 2.5vw auto;
+      }
+
+      div {
+        margin-bottom: 5vw;
+      }
+
+    }
+
+  }
+  /*ここまでログイン後のホーム画面▲*/
+
+  /*ここからこのサイトについて画面▼*/
+  section.about_area {
+
+    h3 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+
+      &:not(:first-of-type) {
+        margin-top: 11vw;
+      }
+
+    }
+
+  }
+  /*ここまでこのサイトについて画面▲*/
+
+}
