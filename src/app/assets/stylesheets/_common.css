@@ -481,11 +481,13 @@ footer .copyright {
 body {
 	font-size: 4vw;
 }
-
 img {
 	max-width: 100%;
 }
-
+.gravatar {
+  width: 16vw;
+  height: 16vw;
+}
 
 
 /*文字揃え*/
@@ -552,8 +554,13 @@ header .top_box h1 {
 }
 
 /*******ドロワー*******/
+#drawer {
+  display: block;
+}
 #drawer ul {
   width: 90vw;
+  padding: 19vw 0;
+  margin: 0 auto;
 }
 #drawer ul li {
   width: 100%;
