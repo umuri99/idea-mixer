@@ -25,9 +25,48 @@ section.login_area {
 
   a {
     display: inline-block;
-    margin-top: 15px;
     font-size: 80%;
+
+    &:last-child {
+      margin-top: 15px;
+    }
+
   }
 
 }
 /* ここからグイン画面▲ */
+
+
+
+
+
+/*================================================
+ *  スマートフォン向けデザイン
+ ================================================*/
+@media screen and (max-width:500px) {
+  /* ここからグイン画面▼ */
+  /*ログインエリア*/
+  section.login_area {
+    width: 80vw;
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+    }
+
+    .checkbox {
+      margin-bottom: 2.5vw;
+
+    }
+
+    a {
+      &:last-child {
+        margin-top: 2.5vw;
+      }
+
+    }
+
+  }
+  /* ここからグイン画面▲ */
+
+}
