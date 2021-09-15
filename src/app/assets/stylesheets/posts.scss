@@ -229,7 +229,7 @@ section.details_area {
   /*リザルトエリア*/
   section.result_area {
     width: 80vw;
-    margin: 0 auto 16vw;
+    margin: 0 auto 5vw;
 
     h2 {
       font-size: 6.4vw;
@@ -259,12 +259,16 @@ section.details_area {
 
   /*投稿エリア*/
   section.post_area {
+
     form {
+
       input[type=submit] {
-        width: 100%;
-        margin: 2.5vw 0 0 0;
+        width: 80vw;
+        margin: 2.5vw auto 0 auto;
       }
+
     }
+
   }
   /*ここまで投稿画面▲*/
 
