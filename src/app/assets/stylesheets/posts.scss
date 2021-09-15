@@ -74,7 +74,7 @@ section.post_area {
   form {
     input[type=submit] {
       width: 355px;
-      margin: 15px auto 0
+      margin: 15px auto 0 auto;
     }
   }
 }
@@ -201,3 +201,108 @@ section.details_area {
 
 }
 /*ここまで投稿の詳細画面▲*/
+
+
+
+
+
+/*================================================
+ *  スマートフォン向けデザイン
+ ================================================*/
+@media screen and (max-width:500px) {
+  /*ここからみんなの投稿一覧画面▼*/
+  /*全投稿一覧エリア*/
+  section.posts_index_area {
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+      text-align: center;
+    }
+
+  }
+  /*ここまでみんなの投稿一覧画面▲*/
+
+
+
+  /*ここから投稿画面▼*/
+  /*リザルトエリア*/
+  section.result_area {
+    width: 80vw;
+    margin: 0 auto 16vw;
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+    }
+
+    form {
+
+      div {
+        font-weight: bold;
+      }
+
+      span {
+        width: 5vw;
+        height: 5vw;
+        margin: 2.5vw auto;
+
+      }
+
+      input[type=submit] {
+        margin-top: 2.5vw;
+      }
+
+    }
+
+  }
+
+  /*投稿エリア*/
+  section.post_area {
+    form {
+      input[type=submit] {
+        width: 100%;
+        margin: 2.5vw 0 0 0;
+      }
+    }
+  }
+  /*ここまで投稿画面▲*/
+
+
+
+  /*ここから投稿の詳細画面▼*/
+  /*投稿詳細エリア*/
+  section.details_area {
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+    }
+
+    .details_box {
+      padding: 4vw;
+
+      .title {
+        margin-bottom: 2.5vw;
+
+        h3 {
+          font-size: 4.8vw;
+        }
+
+      }
+
+      span {
+        width: 4vw;
+        height: 4vw;
+        margin: 1.3vw auto;
+      }
+
+      .contents_box {
+        margin: 2.5vw 0;
+      }
+
+    }
+
+  }
+  /*ここまで投稿の詳細画面▲*/
+}

@@ -50,3 +50,49 @@ section.user_edit_area {
 
 }
 /*ここから登録情報変更画面▲*/
+
+
+
+
+
+/*================================================
+ *  スマートフォン向けデザイン
+ ================================================*/
+@media screen and (max-width:500px) {
+  /*ここからアカウント作成画面▼*/
+  /* サインアップエリア */
+  section.sign_up_area {
+    width: 80vw;
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+    }
+
+  }
+  /*ここからアカウント作成画面▲*/
+
+
+
+  /*ここから登録情報変更画面▼*/
+  /*登録情報変更エリア*/
+  section.user_edit_area {
+
+    width: 80vw;
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+    }
+
+    form {
+
+      input[type=submit] {
+        margin-bottom: 5vw;
+      }
+
+    }
+
+  }
+  /*ここから登録情報変更画面▲*/
+}
