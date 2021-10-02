@@ -53,6 +53,20 @@ section.user_edit_area {
 
 
 
+/*ここからマイページ画面▼*/
+/* ユーザー投稿エリア */
+section.user_posts_area {
+
+  h2 {
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+}
+/*ここからマイページ画面▲*/
+
+
 
 
 /*================================================
@@ -95,4 +109,19 @@ section.user_edit_area {
 
   }
   /*ここから登録情報変更画面▲*/
+
+
+
+  /*ここからマイページ画面▼*/
+  /* ユーザー投稿エリア */
+  section.user_posts_area {
+
+    h2 {
+      font-size: 6.4vw;
+      margin-bottom: 5vw;
+      text-align: center;
+    }
+
+  }
+  /*ここからマイページ画面▲*/
 }
