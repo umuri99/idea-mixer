@@ -6,24 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# メインのサンプルユーザーを1人作成する
-# User.create!(name:  "Example User",
-#              email: "example@railstutorial.org",
-#              password:              "aaaaaaaa",
-#              password_confirmation: "aaaaaaaa",
-#              activated: true,
-#              activated_at: Time.zone.now)
-
 # 追加のユーザー
 User.create!(name:  "太郎",
-             email: "example1@example.com",
+             email: "dammytarou01@gmail.com",
              password:              "aaaaaaaa",
              password_confirmation: "aaaaaaaa",
              activated: true,
              activated_at: Time.zone.now)
 
 User.create!(name:  "佐々木",
-             email: "example2@example.com",
+             email: "dammytarou02@gmail.com",
              password:              "aaaaaaaa",
              password_confirmation: "aaaaaaaa",
              activated: true,
