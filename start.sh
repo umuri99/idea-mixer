@@ -3,7 +3,7 @@
 if [ "${RAILS_ENV}" = "production" ]
 then
     bundle exec rails assets:precompile
-    bundle exec puma -C src/config/puma.rb
+    bundle exec puma -C config/puma.rb
     exit
 fi
 
