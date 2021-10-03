@@ -25,17 +25,19 @@ https://idea-mixer.herokuapp.com/
 - Ruby 2.7.4
 - Ruby on Rails 6.1.4
 - MySQL 5.6.50
-- puma
+- Puma
 - Docker/Docker-compose
 - CircleCi CI/CD
 - Minitest
+- Mailgun
 
 ## 実装した機能
 - ユーザー登録・登録情報変更・ログイン・ログアウト
+- ユーザーアイコン画像変更(gravatar)
 - 文章投稿・投稿の削除
-- 投稿のお気に入り登録
+- 投稿のお気に入り登録(ajax)
 - ランダムなテーマの出力
+- ページネーション(kaminari)
 
 ## データベース設計
-
-## ローカルでの動作方法
+![idea_mixer_er](https://user-images.githubusercontent.com/84421494/135770959-c5b40787-372c-4402-9ab1-c28eab8f5498.png)
