@@ -254,6 +254,7 @@ header .top_box h1 {
   width: 720px;
   display: flex;
   flex-wrap: wrap;
+
 }
 #drawer ul li {
   width: 360px;
